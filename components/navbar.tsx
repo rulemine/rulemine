@@ -7,16 +7,16 @@ import { cn } from "@/lib/utils"
 export function Navbar() {
   return (
     <header className="w-full border-b border-border sticky top-0 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
-      <nav className="mx-auto max-w-6xl px-4 sm:px-6 py-3 flex items-center justify-between">
+      <nav className="mx-auto max-w-6xl px-4 sm:px-6 py-1 flex items-center justify-between">
         <div className="flex items-center gap-2 min-w-0">
           <Link
             href="/"
             className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded"
           >
             <Image
-              src="/placeholder-logo.svg"
+              src="/rm-logo.png"
               alt="RuleMine logo"
-              width={24}
+              width={44}
               height={24}
               className="rounded"
               priority={false}
@@ -29,26 +29,26 @@ export function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3">
           <Link
             href="/"
-            className="text-sm px-2 py-1 rounded hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="text-sm font-semibold px-2 py-1 rounded hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             Home
           </Link>
           <Link
             href="/#about"
-            className="text-sm px-2 py-1 rounded hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="text-sm font-semibold px-2 py-1 rounded hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             About
           </Link>
           <Link
             href="/#contact"
-            className="text-sm px-2 py-1 rounded hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="text-sm font-semibold px-2 py-1 rounded hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             Contact
           </Link>
           <Link
             href="/chat"
             className={cn(
-              "inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium",
+              "ml-32 -mr-10 inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium",
               "bg-primary text-primary-foreground hover:opacity-95",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
             )}
