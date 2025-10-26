@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { useEffect, useRef, useState } from "react"
 import { Navbar } from "@/components/navbar"
 
@@ -56,7 +54,7 @@ export default function ChatPage() {
         }
       }
 
-      const res = await fetch("/api/chat", {
+      const res = await fetch("http://localhost:8000/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: input, file: filePayload }),
