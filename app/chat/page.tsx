@@ -38,7 +38,8 @@ export default function ChatPage() {
     if (!input.trim()) return
 
     const userMsg: Message = { id: crypto.randomUUID(), role: "user", content: input }
-    setMessages((prev) => [...prev, userMsg])
+    const updatedMessages = [...messages, userMsg]
+    setMessages(updatedMessages)
 
     const assistantId = crypto.randomUUID()
     setMessages((prev) => [...prev, { id: assistantId, role: "assistant", content: "", streaming: true }])
@@ -54,10 +55,15 @@ export default function ChatPage() {
         }
       }
 
+      // Build conversation history from previous messages (exclude the current one)
+      const history = messages
+        .filter((m) => !m.streaming && m.content)
+        .map((m) => ({ role: m.role, content: m.content }))
+
       const res = await fetch("https://rulemine-backend.vercel.app/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: input, file: filePayload }),
+        body: JSON.stringify({ query: input, file: filePayload, history }),
       })
 
       if (!res.ok || !res.body) {
