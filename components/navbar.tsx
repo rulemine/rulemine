@@ -34,6 +34,12 @@ export function Navbar() {
             Home
           </Link>
           <Link
+            href="/updates"
+            className="text-sm font-semibold px-2 py-1 rounded hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            Updates
+          </Link>
+          <Link
             href="/#about"
             className="text-sm font-semibold px-2 py-1 rounded hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
@@ -48,7 +54,7 @@ export function Navbar() {
           <Link
             href="/chat"
             className={cn(
-              "ml-32 -mr-10 inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium",
+              "ml-4 inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium",
               "bg-primary text-primary-foreground hover:opacity-95",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
             )}
